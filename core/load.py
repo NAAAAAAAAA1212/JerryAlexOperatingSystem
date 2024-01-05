@@ -68,10 +68,9 @@ if boot == True:
         print("\033[0m\033[1m1 = Up ; 2 = Down ; 3 = Enter\033[0m\033[1m")
         print("\033[0m\033[1mGUI:\033[0m\033[1m")
         print("\033[0m\033[1;30;47m1: DOS\033[0m\033[1m")
-        print("\033[0m\033[1m2: Run On Dos with popup\033[0m\033[1m")
-        print("\033[0m\033[1m3: GUI\033[0m\033[1m")
+        print("\033[0m\033[1m2: GUI\033[0m\033[1m")
         lang = "1"
-        max = 2
+        max = 1
         limit = 0
         num = 0
         while 1 == 1:
@@ -92,20 +91,12 @@ if boot == True:
                 print("\033[0m\033[1m1 = Up ; 2 = Down ; 3 = Enter\033[0m\033[1m")
                 print("\033[0m\033[1mGUI:\033[0m\033[1m")
                 print("\033[0m\033[1;30;47m1: DOS\033[0m\033[1m")
-                print("\033[0m\033[1m2: Run On Dos with popup\033[0m\033[1m")
-                print("\033[0m\033[1m3: GUI\033[0m\033[1m")
+                print("\033[0m\033[1m2: GUI\033[0m\033[1m")
             if num == 1:
                 print("\033[0m\033[1m1 = Up ; 2 = Down ; 3 = Enter\033[0m\033[1m")
                 print("\033[0m\033[1mGUI:\033[0m\033[1m")
                 print("\033[0m\033[1m1: DOS\033[0m\033[1m")
-                print("\033[0m\033[1;30;47m2: Run On Dos with popup\033[0m\033[1m")
-                print("\033[0m\033[1m3: GUI\033[0m\033[1m")
-            if num == 2:
-                print("\033[0m\033[1m1 = Up ; 2 = Down ; 3 = Enter\033[0m\033[1m")
-                print("\033[0m\033[1mGUI:\033[0m\033[1m")
-                print("\033[0m\033[1m1: DOS\033[0m\033[1m")
-                print("\033[0m\033[1m2: Run On Dos with popup\033[0m\033[1m")
-                print("\033[0m\033[1;30;47m3: GUI\033[0m\033[1m")
+                print("\033[0m\033[1;30;47m2: GUI\033[0m\033[1m")
     os.system(clear)
     if lang == "1" and out == "0":
         if os.path.exists("core/eng.py") == True:
@@ -118,22 +109,12 @@ if boot == True:
         else:
             print("文件不存在!")
     if lang == "1" and out == "1":
-        if os.path.exists("core/engg1.py") == True:
-            os.system("python core/engg1.py")
+        if os.path.exists("core/enggui.py") == True:
+            os.system("python core/enggui.py")
         else:
             print("File doesn't exsist!")
     if lang == "2" and out == "1":
-        if os.path.exists("core/chig1.py") == True:
-            os.system("python core/chig1.py")
-        else:
-            print("文件不存在!")
-    if lang == "1" and out == "2":
-        if os.path.exists("core/engg2.py") == True:
-            os.system("python core/engg2.py")
-        else:
-            print("File doesn't exsist!")
-    if lang == "2" and out == "2":
-        if os.path.exists("core/chig2.py") == True:
-            os.system("python core/chig2.py")
+        if os.path.exists("core/chigui.py") == True:
+            os.system("python core/chigui.py")
         else:
             print("文件不存在!")
