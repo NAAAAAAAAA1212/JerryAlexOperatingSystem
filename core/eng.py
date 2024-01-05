@@ -21,8 +21,6 @@ import easygui
 print(coldefault, "[", colgreen, "OK", coldefault, "] PopUp System Online")
 import random
 print(coldefault, "[", colgreen, "OK", coldefault, "] Random System Online")
-import tqdm
-print(coldefault, "[", colgreen, "OK", coldefault, "] ProgressBar System Online")
 import system32.auth
 print(coldefault, "[", colgreen, "OK", coldefault, "] system32 Auth System Online")
 import system32.printf

@@ -2,8 +2,6 @@
 boot = True
 i1 = True
 i2 = True
-i3 = True
-i4 = True
 
 #testing
 try:
@@ -11,22 +9,14 @@ try:
 except:
     i1 = False
 try:
-    import tqdm
-except:
-    i2 = False
-try:
     import easygui
 except:
-    i3 = False
+    i2 = False
 
 #output
 if i1 == False:
     print("module OS not found, will not boot")
-    boot = False
 if i2 == False:
-    print("module tqdm not found, will not boot")
-    boot = False
-if i3 == False:
     print("module easygui not found, will not boot")
     boot = False
 

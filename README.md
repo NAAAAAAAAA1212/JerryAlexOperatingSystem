@@ -12,8 +12,7 @@ jaos:jaos
 ## Using Python Orgin File To Run
 ### Things That You Need In Order To Run
 1. OS (OS-WIN for macOS and Windows, OS-SYS for Linux)
-2. Tqdm
-3. Easygui
+2. Easygui
 ### How to run?
 Go to
 ```
