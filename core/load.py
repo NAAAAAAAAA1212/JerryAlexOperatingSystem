@@ -42,7 +42,7 @@ if boot == True:
     while 1 == 1:
         key = input()
         if key == "3":
-            lang = str(num + 1)
+            lang = str(num)
             break
         if key == "1":
             num = num - 1
@@ -98,22 +98,22 @@ if boot == True:
                 print("\033[0m\033[1m1: DOS\033[0m\033[1m")
                 print("\033[0m\033[1;30;47m2: GUI\033[0m\033[1m")
     os.system(clear)
-    if lang == "1" and out == "0":
+    if lang == "0" and out == "0":
         if os.path.exists("core/eng.py") == True:
             os.system("python core/eng.py")
         else:
             print("File doesn't exsist!")
-    if lang == "2" and out == "0":
+    if lang == "1" and out == "0":
         if os.path.exists("core/chi.py") == True:
             os.system("python core/chi.py")
         else:
             print("文件不存在!")
-    if lang == "1" and out == "1":
+    if lang == "0" and out == "1":
         if os.path.exists("core/enggui.py") == True:
             os.system("python core/enggui.py")
         else:
             print("File doesn't exsist!")
-    if lang == "2" and out == "1":
+    if lang == "1" and out == "1":
         if os.path.exists("core/chigui.py") == True:
             os.system("python core/chigui.py")
         else:
