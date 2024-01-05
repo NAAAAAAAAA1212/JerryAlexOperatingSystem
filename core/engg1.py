@@ -1,7 +1,7 @@
 #init core
 print("033[0;1m")
 ver = "VERSION:1.0"
-mail = "alexa@microsoft.zengqizhi.eu.org"
+mail = "VERSION:1.0 GUI:HALF LANG:ENGLISH"
 #startsys
 #insert color
 coldefault = "\033[0;1m"

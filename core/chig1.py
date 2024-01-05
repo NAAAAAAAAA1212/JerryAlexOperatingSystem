@@ -1,6 +1,6 @@
 #init core
 print("033[0;1m")
-ver = "VERSION:1.0"
+ver = "VERSION:1.0 GUI:HALF LANG:CHINESE"
 mail = "alexa@microsoft.zengqizhi.eu.org"
 #startsys
 #insert color

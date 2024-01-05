@@ -1,5 +1,5 @@
 #init core
-ver = "VERSION:1.0 GUI:TRUE"
+ver = "VERSION:1.0 GUI:TRUE LANG:ENGLISH"
 mail = "alexa@microsoft.zengqizhi.eu.org"
 import time
 import easygui
