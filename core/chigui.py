@@ -38,7 +38,7 @@ try:
                 rann1 = easygui.enterbox(msg = "MIN : ", title = "隨機數 : Min Number")
                 rann2 = easygui.enterbox(msg = "MAX : ", title = "隨機數 : MAX Number")
                 try:
-                    easygui.msgbox(msg  = ("隨機數: ", random.randint(rann1, rann2)), title = "隨機數", ok_button = "繼續")
+                    easygui.msgbox(msg  = ("隨機數: ", random.randint(int(rann1), int(rann2))), title = "隨機數", ok_button = "繼續")
                 except:
                     easygui.msgbox(msg = "對不起, 隨機數遇到了一點狀況!", title = "隨機數 : 錯誤", ok_button = "繼續")
             if command == "exit":

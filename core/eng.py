@@ -97,7 +97,7 @@ while 2 == 2:
             rann1 = int(input("min: "))
             rann2 = int(input("max: "))
             try:
-                print("num: ", random.randint(rann1, rann2))
+                print("num: ", random.randint(int(rann1), int(rann2)))
             except:
                 print(colred, "Sorry! the number you typed will make the os broken!", coldefault)
             status = 1
