@@ -18,6 +18,7 @@ except:
 #output
 if i1 == False:
     print("module OS not found, will not boot")
+    boot = False
 if i2 == False:
     print("module easygui not found, GUI will be disabled")
     gui = False
@@ -34,10 +35,10 @@ if boot == True:
     max = 1
     limit = 0
     num = 0
-    print("1 = Up ; 2 = Down ; 3 = Enter")
-    print("\033[1mLanguage: 語言: ")
-    print("\033[1;30;47m1: English")
-    print("\033[0m\033[1m2: 繁體中文")
+    print("\033[0m\033[1m1 = Up ; 2 = Down ; 3 = Enter\033[0m\033[1m")
+    print("\033[0m\033[1mLanguage: 語言: \033[0m\033[1m")
+    print("\033[0m\033[1;30;47m1: English\033[0m\033[1m")
+    print("\033[0m\033[1m2: 繁體中文\033[0m\033[1m")
     while 1 == 1:
         key = input()
         if key == "3":
@@ -53,21 +54,22 @@ if boot == True:
             num = max
         os.system(clear)
         if num == 0:
-            print("1 = Up ; 2 = Down ; 3 = Enter")
-            print("\033[1mLanguage: 語言: ")
-            print("\033[1;30;47m1: English")
-            print("\033[0m\033[1m2: 繁體中文")
+            print("\033[0m\033[1m1 = Up ; 2 = Down ; 3 = Enter\033[0m\033[1m")
+            print("\033[0m\033[1mLanguage: 語言: \033[0m\033[1m")
+            print("\033[0m\033[1;30;47m1: English\033[0m\033[1m")
+            print("\033[0m\033[1m2: 繁體中文\033[0m\033[1m")
         if num == 1:
-            print("1 = Up ; 2 = Down ; 3 = Enter")
-            print("\033[1mLanguage: 語言: ")
-            print("\033[0m\033[1m1: English")
-            print("\033[1;30;47m2: 繁體中文\033[0m\033[1m")
+            print("\033[0m\033[1m1 = Up ; 2 = Down ; 3 = Enter\033[0m\033[1m")
+            print("\033[0m\033[1mLanguage: 語言: \033[0m\033[1m")
+            print("\033[0m\033[1m1: English\033[0m\033[1m")
+            print("\033[0m\033[1;30;47m2: 繁體中文\033[0m\033[1m")
+    os.system(clear)
     if gui == True:
-        print("1 = Up ; 2 = Down ; 3 = Enter")
-        print("\033[1mGUI:")
-        print("\033[1;30;47m1: DOS")
-        print("\033[0m\033[1m2: Run On Dos with popup")
-        print("\033[0m\033[1m2: GUI")
+        print("\033[0m\033[1m1 = Up ; 2 = Down ; 3 = Enter\033[0m\033[1m")
+        print("\033[0m\033[1mGUI:\033[0m\033[1m")
+        print("\033[0m\033[1;30;47m1: DOS\033[0m\033[1m")
+        print("\033[0m\033[1m2: Run On Dos with popup\033[0m\033[1m")
+        print("\033[0m\033[1m3: GUI\033[0m\033[1m")
         lang = "1"
         max = 2
         limit = 0
@@ -75,7 +77,7 @@ if boot == True:
         while 1 == 1:
             key = input()
             if key == "3":
-                out = str(num + 1)
+                out = str(num)
                 break
             if key == "1":
                 num = num - 1
@@ -87,20 +89,24 @@ if boot == True:
                 num = max
             os.system(clear)
             if num == 0:
-                print("\033[1mGUI:")
-                print("\033[0m\033[1m1;30;47m1: DOS")
-                print("\033[0m\033[1m2: Run On Dos with popup")
-                print("\033[0m\033[1m2: GUI")
+                print("\033[0m\033[1m1 = Up ; 2 = Down ; 3 = Enter\033[0m\033[1m")
+                print("\033[0m\033[1mGUI:\033[0m\033[1m")
+                print("\033[0m\033[1;30;47m1: DOS\033[0m\033[1m")
+                print("\033[0m\033[1m2: Run On Dos with popup\033[0m\033[1m")
+                print("\033[0m\033[1m3: GUI\033[0m\033[1m")
             if num == 1:
-                print("\033[1mGUI:")
-                print("\033[0m\033[1m1: DOS")
-                print("\033[1;30;47m\033[1m2: Run On Dos with popup")
-                print("\033[0m\033[1m2: GUI")
+                print("\033[0m\033[1m1 = Up ; 2 = Down ; 3 = Enter\033[0m\033[1m")
+                print("\033[0m\033[1mGUI:\033[0m\033[1m")
+                print("\033[0m\033[1m1: DOS\033[0m\033[1m")
+                print("\033[0m\033[1;30;47m2: Run On Dos with popup\033[0m\033[1m")
+                print("\033[0m\033[1m3: GUI\033[0m\033[1m")
             if num == 2:
-                print("\033[1mGUI:")
-                print("\033[0m\033[1m1: DOS")
-                print("\033[0m\033[1m2: Run On Dos with popup")
-                print("\033[1;30;47m2: GUI")
+                print("\033[0m\033[1m1 = Up ; 2 = Down ; 3 = Enter\033[0m\033[1m")
+                print("\033[0m\033[1mGUI:\033[0m\033[1m")
+                print("\033[0m\033[1m1: DOS\033[0m\033[1m")
+                print("\033[0m\033[1m2: Run On Dos with popup\033[0m\033[1m")
+                print("\033[0m\033[1;30;47m3: GUI\033[0m\033[1m")
+    os.system(clear)
     if lang == "1" and out == "0":
         if os.path.exists("core/eng.py") == True:
             os.system("python core/eng.py")
