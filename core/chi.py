@@ -66,6 +66,7 @@ while 2 == 2:
             print("help         | 取得指令")
             print("sudo         | 執行管理員指令")
             print("python       | 進入python shell")
+            print("app          | 執行非官方軟件")
             if kernel == "nt":
                 print("cmdstat      | 進入 cmd")
                 print("cmd          | 執行 cmd 指令")
@@ -151,6 +152,23 @@ while 2 == 2:
                 con = input("TERMINAL COMMAND >>> ")
                 os.system(con)
                 status = 1
+        if command == "app":
+            print(".py 軟件:")
+            for file in os.listdir("./core"):
+                if file.endswith(".py"):
+                    print(os.path.join(file))
+            print(".jar 軟件:")
+            for file in os.listdir("./core"):
+                if file.endswith(".jar"):
+                    print(os.path.join(file))
+            appwhat = input("你想要運行哪個文件?:")
+            apprun = "exit"
+            if appwhat.endswith(".py"):
+                apprun = "python3 ./core/" + appwhat
+            if appwhat.endswith(".jar"):
+                apprun = "java -jar ./core/" + appwhat
+            os.system(apprun)
+            status = 1
         if status == 1:
             print(colgreen, "指令執行成功!", coldefault)
         if status == 0:

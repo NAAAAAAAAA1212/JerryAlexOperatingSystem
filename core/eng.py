@@ -67,6 +67,7 @@ while 2 == 2:
             print("help         | getting support of command")
             print("sudo         | get root")
             print("python       | get python shell")
+            print("app          | run custom apps")
             if kernel == "nt":
                 print("cmdstat      | run in cmd")
                 print("cmd          | run cmd command")
@@ -152,6 +153,23 @@ while 2 == 2:
                 con = input("TERMINAL COMMAND >>> ")
                 os.system(con)
                 status = 1
+        if command == "app":
+            print(".py apps:")
+            for file in os.listdir("./core"):
+                if file.endswith(".py"):
+                    print(os.path.join(file))
+            print(".jar apps:")
+            for file in os.listdir("./core"):
+                if file.endswith(".jar"):
+                    print(os.path.join(file))
+            appwhat = input("Please Select which app you want to run:")
+            apprun = "exit"
+            if appwhat.endswith(".py"):
+                apprun = "python3 ./core/" + appwhat
+            if appwhat.endswith(".jar"):
+                apprun = "java -jar ./core/" + appwhat
+            os.system(apprun)
+            status = 1
         if status == 1:
             print(colgreen, "Command Exectued!", coldefault)
         if status == 0:
