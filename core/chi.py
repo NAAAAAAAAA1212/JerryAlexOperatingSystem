@@ -17,8 +17,6 @@ import os
 print(coldefault, "[", colgreen, "OK", coldefault, "] Kernel Command Online")
 import time
 print(coldefault, "[", colgreen, "OK", coldefault, "] Time Management System Online")
-import easygui
-print(coldefault, "[", colgreen, "OK", coldefault, "] PopUp System Online")
 import random
 import system32.auth
 print(coldefault, "[", colgreen, "OK", coldefault, "] system32 Auth System Online")
