@@ -154,19 +154,19 @@ while 2 == 2:
                 status = 1
         if command == "app":
             print(".py 軟件:")
-            for file in os.listdir("./core"):
+            for file in os.listdir("./core/apps"):
                 if file.endswith(".py"):
                     print(os.path.join(file))
             print(".jar 軟件:")
-            for file in os.listdir("./core"):
+            for file in os.listdir("./core/apps"):
                 if file.endswith(".jar"):
                     print(os.path.join(file))
             appwhat = input("你想要運行哪個文件?:")
             apprun = "exit"
             if appwhat.endswith(".py"):
-                apprun = "python3 ./core/" + appwhat
+                apprun = "python3 ./core/apps/" + appwhat
             if appwhat.endswith(".jar"):
-                apprun = "java -jar ./core/" + appwhat
+                apprun = "java -jar ./core/apps/" + appwhat
             os.system(apprun)
             status = 1
         if status == 1:
