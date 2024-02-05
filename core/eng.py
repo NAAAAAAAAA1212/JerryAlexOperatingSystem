@@ -86,6 +86,7 @@ while 2 == 2:
             status = 1
         if command == "kernel":
             print(kernel)
+            status = 1
         if command == "clear":
             os.system(clear)
             status = 1
