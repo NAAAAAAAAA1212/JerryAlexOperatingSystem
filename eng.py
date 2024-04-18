@@ -1,6 +1,6 @@
 #init core
 print("033[0;1m")
-ver = "VERSION:1.0 GUI:FALSE LANG:CHINESE"
+ver = "VERSION:1.0 GUI:FALSE LANG:ENGLISH"
 mail = "alexa@microsoft.zengqizhi.eu.org"
 #startsys
 #insert color
@@ -18,10 +18,12 @@ print(coldefault, "[", colgreen, "OK", coldefault, "] Kernel Command Online")
 import time
 print(coldefault, "[", colgreen, "OK", coldefault, "] Time Management System Online")
 import random
-import system32.auth
+print(coldefault, "[", colgreen, "OK", coldefault, "] Random System Online")
+import auth
 print(coldefault, "[", colgreen, "OK", coldefault, "] system32 Auth System Online")
-import system32.printf
-print(coldefault, "[", colgreen, "OK", coldefault, "] system32 Printf Output Online")
+#import system32.printf
+#print(coldefault, "[", colgreen, "OK", coldefault, "] system32 Printf Output Online")
+
 #kernel command
 kernel = os.name
 print(coldefault, "[", colgreen, "OK", coldefault, "] Kernel Info Get")
@@ -34,45 +36,45 @@ os.system(clear)
 #boot password
 while 2 == 2:
     while 1 == 1:
-        print("請輸入密碼以登入!")
-        usernm = input("帳戶: ")
-        passwd = input("密碼 : ")
-        allow = system32.auth.authme(usernm, passwd, 0)
+        print("To enter JAOS, please insert your credential!")
+        usernm = input("usernm : ")
+        passwd = input("passwd : ")
+        allow = auth.authme(usernm, passwd, 0)
         if allow == 0:
-            print(colred, "帳戶或密碼錯誤!", coldefault)
+            print(colred, "Sorry! Wrong Credential!", coldefault)
         if allow == 1:
-            print(colgreen, "登入成功!", coldefault)
+            print(colgreen, "LOGIN SUCCESS", coldefault)
             break
         if allow == 2:
-            print(colyellow, "對不起!這個帳號已被禁止登入!", coldefault)
+            print(colyellow, "Sorry! The account you are trying to login is not reachable!", coldefault)
     os.system(clear)
 #dos system
     print("JAOS SYSTEM", ver, "ALL RIGHT RESERVERD")
-    print("作者電郵:", mail)
-    print("如果不知道如何使用, 請輸入help!")
-    print("你已登入為: ", usernm)
+    print("mail:", mail)
+    print("To get all the commands, type help")
+    print("You have logged in as", usernm)
     while 1 == 1:
         command = input(("DOS", ver, usernm, ">>>"))
         status = 0
         if command == "help":
-            print("ver          | 取得版本信息")
-            print("mail         | 取得作者信息")
-            print("whoami       | 你是誰")
-            print("kernel       | 取得系統框架")
-            print("clear        | 清空屏幕")
-            print("time         | 取得標準時間")
-            print("random       | 獲取隨機數")
-            print("exit         | 關機")
-            print("help         | 取得指令")
-            print("sudo         | 執行管理員指令")
-            print("python       | 進入python shell")
-            print("app          | 執行非官方軟件")
+            print("ver          | getting the version")
+            print("mail         | geting the author's mail")
+            print("whoami       | who you are")
+            print("kernel       | getting the system kernel")
+            print("clear        | clearing the screen")
+            print("time         | getting the std time")
+            print("random       | getting a random number")
+            print("exit         | shutdown the system")
+            print("help         | getting support of command")
+            print("sudo         | get root")
+            print("python       | get python shell")
+            print("app          | run custom apps")
             if kernel == "nt":
-                print("cmdstat      | 進入 cmd")
-                print("cmd          | 執行 cmd 指令")
+                print("cmdstat      | run in cmd")
+                print("cmd          | run cmd command")
             if kernel == "posix":
-                print("terminalstat | 進入 zsh")
-                print("terminal     | 執行 terminal 指令")
+                print("terminalstat | run in zsh")
+                print("terminal     | run terminal command")
             status = 1
         if command == "ver":
             print(ver)
@@ -98,29 +100,29 @@ while 2 == 2:
             try:
                 print("num: ", random.randint(int(rann1), int(rann2)))
             except:
-                print(colred, "對不起!系統發現了錯誤!", coldefault)
+                print(colred, "Sorry! the number you typed will make the os broken!", coldefault)
             status = 1
         if command == "exit":
             status = 1
             break
         if command == "sudo":
-            passwd = input("如果你要繼續, 請輸入密碼! >>> ")
+            passwd = input("To continue, please input your password! >>> ")
             sudo = 0
-            sudo = system32.auth.authsudo(usernm, passwd)
+            sudo = auth.authsudo(usernm, passwd)
             if sudo == 2:
                 sustatus = 0
-                print("指令清單:")
-                print("whoami | 你是誰")
-                sucommand = input("你想要執行哪個指令? >>> ")
+                print("Command List:")
+                print("whoami | who you are")
+                sucommand = input("Which command you want to execute? >>> ")
                 if sucommand == "whoami":
                     print(colcyan, "ROOT", coldefault)
                     sustatus = 1
                 if sustatus == 0:
-                    print(colyellow, "對不起, 這個管理員指令不存在!", coldefault)
+                    print(colyellow, "Sorry, but this sudo command doesn't exist!", coldefault)
             if sudo == 1:
-                print(colyellow, "對不起! 密碼錯誤!", coldefault)
+                print(colyellow, "Sorry! Wrong Password!", coldefault)
             if sudo == 0:
-                print(colyellow, "請詢問你的管理員以取得管理員權限!", coldefault)
+                print(colyellow, "Please ask your administrator for sudo access!", coldefault)
             status = 1
         if command == "python":
             os.system("python")
@@ -154,15 +156,15 @@ while 2 == 2:
                 os.system(con)
                 status = 1
         if command == "app":
-            print(".py 軟件:")
+            print(".py apps:")
             for file in os.listdir("./core/apps"):
                 if file.endswith(".py"):
                     print(os.path.join(file))
-            print(".jar 軟件:")
+            print(".jar apps:")
             for file in os.listdir("./core/apps"):
                 if file.endswith(".jar"):
                     print(os.path.join(file))
-            appwhat = input("你想要運行哪個文件?:")
+            appwhat = input("Please Select which app you want to run:")
             apprun = "exit"
             if appwhat.endswith(".py"):
                 apprun = "python3 ./core/apps/" + appwhat
@@ -171,26 +173,26 @@ while 2 == 2:
             os.system(apprun)
             status = 1
         if status == 1:
-            print(colgreen, "指令執行成功!", coldefault)
+            print(colgreen, "Command Exectued!", coldefault)
         if status == 0:
-            print(colred, "這個指令 : \'", command, "\' 不是一個正確的指令, 如果需要幫助, 請輸入 \' help\'", coldefault)
+            print(colred, "The command you typed, which is : \'", command, "\'is not a valid command, if you have any problems, please type \' help\'", coldefault)
     os.system("clear")
 #logout
-    print(colgreen, "登出狀態", coldefault)
-    print(colpueple, "1.登入 還是 2.關機 ?", coldefault)
+    print(colgreen, "LOGGED OUT", coldefault)
+    print(colpueple, "Login or Shutdown ?", coldefault)
     while 1 == 1:
         ms = input()
         mss = 0
         out = 0
-        if ms == "1":
+        if ms == "login":
             mss = 1
             break
-        if ms == "2":
+        if ms == "shutdown":
             mss = 1
             out = 1
             break
         if mss == 0:
-            print(colred, "1 還是 2 !", coldefault)
+            print(colred, "PLEASE CHOOSE ONE OF THESE!", coldefault)
     os.system(clear)
     if out == 1:
         break
